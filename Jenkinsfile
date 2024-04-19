@@ -32,7 +32,7 @@ pipeline{
         }
         stage('Test'){
             steps{
-                sh 'mvn test'
+                sh 'mvn -s settings.xml test'
                 echo "UNIT TEST"
             }
         }
@@ -40,7 +40,7 @@ pipeline{
         stage('Checkstyle Analysis'){
             steps{
                 echo "CODE ANALYSIS VULNERABILITIES"
-                sh 'mvn checkstyle:checkstyle'
+                sh 'mvn -s settings.xml checkstyle:checkstyle'
             }
         }
     }
