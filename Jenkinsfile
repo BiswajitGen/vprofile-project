@@ -6,8 +6,7 @@ pipeline{
     }
 
     environment{
-        NEXUS_VERSION = "nexus3"
-        SNAP_REPO = 'vprofile-release'
+        SNAP_REPO = 'vprofile-snapshot'
         NEXUS_USER = 'admin'
         NEXUS_PASS = 'admin123'
         RELEASE_REPO = 'vprofile-release' 
