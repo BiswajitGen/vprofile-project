@@ -33,11 +33,13 @@ pipeline{
         stage('Test'){
             steps{
                 sh 'mvn test'
+                echo "UNIT TEST"
             }
         }
 
         stage('Checkstyle Analysis'){
             steps{
+                echo "CODE ANALYSIS VULNERABILITIES"
                 sh 'mvn checkstyle:checkstyle'
             }
         }
