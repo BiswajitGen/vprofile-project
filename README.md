@@ -1,5 +1,5 @@
 # Prerequisites
-#
+## Git sample Code COMMIT & PUSH
 - JDK 11 
 - Maven 3 
 - MySQL 8
