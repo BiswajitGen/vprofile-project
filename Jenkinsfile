@@ -47,12 +47,13 @@ pipeline{
             }
         }
         stage('CODE ANALYSIS with SONARQUBE') {
-          echo "SONARQUBE INITIATED"
+
 		  environment {
              scannerHome = tool "${SONARSCANNER}"
           }
 
             steps {
+                echo "SONARQUBE INITIATED"
                 withSonarQubeEnv("${SONARSERVER}") {
                 sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                     -Dsonar.projectName=vprofile-repo \
