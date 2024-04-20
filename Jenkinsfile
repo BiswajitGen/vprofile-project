@@ -56,7 +56,7 @@ pipeline{
                 echo "SONARQUBE INITIATED"
                 withSonarQubeEnv("${SONARSERVER}") {
                 sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
-                    -Dsonar.projectName=vprofile-repo \
+                    -Dsonar.projectName=vprofile \
                     -Dsonar.projectVersion=1.0 \
                     -Dsonar.sources=src/ \
                     -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
@@ -69,7 +69,7 @@ pipeline{
         }
         stage("Quality gate") {
             steps {
-                timeout(time: 1, unit: 'HOURS') {
+                timeout(time: 10, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                  }
             }
